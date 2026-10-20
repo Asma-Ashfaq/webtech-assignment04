@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Markdown Slides</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Markdown Slides</h1>
+    <input type="text" id="title" placeholder="Presentation name" aria-label="Presentation name">
+    <select id="deckList" aria-label="Saved presentations"></select>
+    <button id="newBtn">New</button>
+    <button id="saveBtn" class="primary">Save (Ctrl+S)</button>
+    <button id="presentBtn">Present</button>
+    <button id="deleteBtn">Delete</button>
+    <span id="status"></span>
+  </header>
+
+  <main>
+    <!-- Section 1: Markdown code -->
+    <section>
+      <h2>Markdown Editor</h2>
+      <textarea id="editor" spellcheck="false" aria-label="Markdown editor"></textarea>
+    </section>
+
+    <!-- Section 2: Real-time preview -->
+    <section>
+      <h2>Live Preview</h2>
+      <div class="viewer">
+        <div class="stagebox"><div class="slide" id="pvSlide"></div></div>
+        <div class="controls">
+          <button id="pvLeft" aria-label="Previous slide">&#9664; Left</button>
+          <span class="count" id="pvCount">1 / 1</span>
+          <button id="pvRight" aria-label="Next slide">Right &#9654;</button>
+          <button id="pvFull">&#9974; Full Screen</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Presentation screen -->
+  <div id="present" aria-label="Presentation">
+    <div class="stagebox"><div class="slide" id="prSlide"></div></div>
+    <div class="controls">
+      <button id="prLeft" aria-label="Previous slide">&#9664; Left</button>
+      <span class="count" id="prCount">1 / 1</span>
+      <button id="prRight" aria-label="Next slide">Right &#9654;</button>
+      <button id="prFull">Exit Full Screen</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
